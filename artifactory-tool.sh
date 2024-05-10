@@ -20,7 +20,7 @@ PRODUCT=""
 case "$LICENSE" in
     CELS-*)         PRODUCT="centos6-els" ;;
     CELS_8-*)       PRODUCT="centos8-els" ;;
-    UELS-*)         PRODUCT="ubuntu1604-els" ;;
+    UELS16-*)         PRODUCT="ubuntu1604-els" ;;
     CENTOS7-*)      PRODUCT="centos7-els-standard" ;;
     CENTOS7COMP-*)  PRODUCT="centos7-els-complete" ;;
     CENTOS8STREAM-*)PRODUCT="centos8stream-els" ;;
