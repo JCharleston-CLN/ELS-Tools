@@ -18,15 +18,15 @@ read LICENSE
 # Determine the product type based on the license key prefix
 PRODUCT=""
 case "$LICENSE" in
-    CELS-*)         PRODUCT="CentOS6-els" ;;
-    CENTOS7-*)      PRODUCT="CentOS7-els-standard" ;;
-    CENTOS7COMP-*)  PRODUCT="CentOS7-els-complete" ;;
-    CELS_8-*)       PRODUCT="CentOS8-els" ;;
-    CENTOS8STREAM-*)PRODUCT="CentOS8stream-els" ;;
-    OELS-*)         PRODUCT="OEL6-els" ;;
-    UELS16-*)       PRODUCT="Ubuntu1604-els" ;;
-    UELS18-*)       PRODUCT="Ubuntu1804-els" ;;
-    UELS18SLA-*)    PRODUCT="Ubuntu1804sla-els" ;;
+    CELS-*)         PRODUCT="centos6-els" ;;
+    CELS_8-*)       PRODUCT="centos8-els" ;;
+    UELS-*)         PRODUCT="ubuntu1604-els" ;;
+    CENTOS7-*)      PRODUCT="centos7-els-standard" ;;
+    CENTOS7COMP-*)  PRODUCT="centos7-els-complete" ;;
+    CENTOS8STREAM-*)PRODUCT="centos8stream-els" ;;
+    OELS-*)         PRODUCT="oel6-els" ;;
+    UELS18-*)       PRODUCT="ubuntu1804-els" ;;
+    UELS18SLA-*)    PRODUCT="ubuntu1804sla-els" ;;
     *)              echo "Invalid license key. Please check and try again."; exit 1 ;;
 esac
 
@@ -41,6 +41,10 @@ TOKEN=$(curl -s -X POST \
 if [ -z "$TOKEN" ]; then
     echo "Failed to retrieve token. Please check your license key and try again."
 else
+    echo "Token retrieved successfully."
+    generate_urls "$PRODUCT" "$TOKEN"
+fi
+
     echo "Token retrieved successfully."
     generate_urls "$PRODUCT" "$TOKEN"
 fi
