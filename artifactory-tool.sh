@@ -28,7 +28,7 @@ generate_urls() {
             echo "2. https://repo.cloudlinux.com/centos8.4-els/${token}/updates/i686/"
             echo "3. https://repo.cloudlinux.com/centos8.4-els/${token}/updates/Sources/"
             ;;
-        UELS)         # Ubuntu 16.04
+        UELS16)         # Ubuntu 16.04
             echo "URLs using token $token for Ubuntu 16.04:"
             echo "1. https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/x86_64/"
             echo "2. https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i686/"
