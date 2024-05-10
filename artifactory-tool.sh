@@ -1,5 +1,5 @@
 #!/bin/bash
-clear
+
 
 # Define a function to generate URLs based on the token and product type
 generate_urls() {
@@ -91,7 +91,5 @@ if [ -z "$TOKEN" ]; then
 else
     echo "Token retrieved successfully."
     echo "Here are the urls you can use for configuring each Artifactory based on Hardware type:"
-    echo ""
-
     generate_urls "$TOKEN" "$PREFIX"
 fi
