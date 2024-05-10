@@ -90,7 +90,7 @@ if [ -z "$TOKEN" ]; then
     echo "Failed to retrieve token. Please check your license key and try again."
 else
     echo "Token retrieved successfully."
-    echo "Here are the urls you can use for configuring each Artifactory based on Hardware type:
+    echo "Here are the urls you can use for configuring each Artifactory based on Hardware type:"
     echo ""
     #echo "$TOKEN" 
     #echo "$PREFIX"
