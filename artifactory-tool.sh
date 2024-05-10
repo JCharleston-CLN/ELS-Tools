@@ -5,6 +5,7 @@ generate_urls() {
     local token=$1
     local prefix=$2
 
+    echo $prefix
     # Determine URLs based on license key prefix
     case "$PREFIX" in
         CELS-*)         # CentOS 6
