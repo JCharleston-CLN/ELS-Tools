@@ -8,7 +8,7 @@ generate_urls() {
     
     # Determine URLs based on license key prefix
     case "$prefix" in
-        CELS-*)         # CentOS 6
+        CELS*)         # CentOS 6
             echo "URLs using token $token for CentOS 6:"
             echo "1. https://repo.cloudlinux.com/centos6-els/${token}/updates/x86_64/"
             echo "2. https://repo.cloudlinux.com/centos6-els/${token}/updates/i686/"
@@ -16,7 +16,7 @@ generate_urls() {
             echo "4. https://repo.cloudlinux.com/centos6-els/${token}/updates/SRPMS/"
             echo "5. https://repo.cloudlinux.com/centos6-els/${token}/updates/"            
             ;;
-        CELS_8-*)       # CentOS 8
+        CELS_8*)       # CentOS 8
             echo "URLs using token $token for CentOS 8.5-els:"
             echo "1. https://repo.cloudlinux.com/centos8.5-els/${token}/updates/x86_64/"
             echo "2. https://repo.cloudlinux.com/centos8.5-els/${token}/updates/i686/"
@@ -26,43 +26,43 @@ generate_urls() {
             echo "2. https://repo.cloudlinux.com/centos8.4-els/${token}/updates/i686/"
             echo "3. https://repo.cloudlinux.com/centos8.4-els/${token}/updates/Sources/"
             ;;
-        UELS-*)         # Ubuntu 16.04
+        UELS*)         # Ubuntu 16.04
             echo "URLs using token $token for Ubuntu 16.04:"
             echo "1. https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/x86_64/"
             echo "2. https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i686/"
             echo "3. https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i386/"
             ;;
-        CENTOS7-*)      # CentOS 7 Standard
+        CENTOS7*)      # CentOS 7 Standard
             echo "URLs using token $token for CentOS 7 Standard:"
             echo "1. https://repo.tuxcare.com/centos7-els/${token}/updates/x86_64/"
             echo "2. https://repo.tuxcare.com/centos7-els/${token}/updates/i686/"
             echo "3. https://repo.tuxcare.com/centos7-els/${token}/updates/i386/"
             ;;
-        CENTOS7COMP-*)  # CentOS 7 Complete
+        CENTOS7COMP*)  # CentOS 7 Complete
             echo "URLs using token $token for CentOS 7 Complete:"
             echo "1. https://repo.tuxcare.com/centos7-els/${token}/updates/x86_64/"
             echo "2. https://repo.tuxcare.com/centos7-els/${token}/updates/i686/"
             echo "3. https://repo.tuxcare.com/centos7-els/${Ttoken}/updates/i386/"
             ;;
-        CENTOS8STREAM-*)# CentOS 8 Stream
+        CENTOS8STREAM*)# CentOS 8 Stream
             echo "URLs using token $token for CentOS 8 Stream:"
             echo "1. comming soon"
             echo "2. comming soon"
             echo "3. comming soon"
             ;;
-        OELS-*)         # OEL 6
+        OELS*)         # OEL 6
             echo "URLs using token $token for OEL 6:"
             echo "1. https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/x86_64/"
             echo "2. https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/i686/"
             echo "3. https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/SRPMS/"
             ;;
-        UELS18-*)       # Ubuntu 18.04
+        UELS18*)       # Ubuntu 18.04
             echo "URLs using token $token for Ubuntu 18.04:"
             echo "1. https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/x86_64/"
             echo "2. https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i686/"
             echo "3. https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i386/"
             ;;
-        UELS18SLA-*)    # Ubuntu 18.04 SLA
+        UELS18SLA*)    # Ubuntu 18.04 SLA
             echo "URLs using token $token for Ubuntu 18.04 SLA:"
             echo "1. https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/x86_64/"
             echo "2. https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i686/"
