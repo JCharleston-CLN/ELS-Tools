@@ -3,6 +3,7 @@
 # Define a function to generate URLs based on the token and product type
 generate_urls() {
     local token=$1
+    local prefix=$2
 
     # Determine URLs based on license key prefix
     case "$PREFIX" in
@@ -90,5 +91,5 @@ if [ -z "$TOKEN" ]; then
     echo "Failed to retrieve token. Please check your license key and try again."
 else
     echo "Token retrieved successfully."
-    generate_urls "$TOKEN"
+    generate_urls "$TOKEN" "$PREFIX"
 fi
