@@ -44,7 +44,3 @@ else
     echo "Token retrieved successfully."
     generate_urls "$PRODUCT" "$TOKEN"
 fi
-
-    echo "Token retrieved successfully."
-    generate_urls "$PRODUCT" "$TOKEN"
-fi
