@@ -92,6 +92,7 @@ if [ -z "$TOKEN" ]; then
     echo "Failed to retrieve token. Please check your license key and try again."
 else
     echo "Token retrieved successfully."
-    echo "$TOKEN" "$PREFIX"
+    echo "$TOKEN" 
+    echo "$PREFIX"
     generate_urls "$TOKEN" "$PREFIX"
 fi
