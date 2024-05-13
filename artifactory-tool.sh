@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-echo "****************************************************************************
+echo "****************************************************************************"
 echo  "Title: TuxCare ELS Artifactory Registration Script."
 echo  "Purpose: Register Artifactory Tool to TuxCare and provide URls"
 echo "         for Artifactory Configuration."
