@@ -1,28 +1,28 @@
 #!/bin/bash
 clear
-echo ****************************************************************************
-echo  Title: TuxCare ELS Artifactory Registration Script.
-echo  Purpose: Register Artifactory Tool to TuxCare and provide URls
+echo "****************************************************************************
+echo  "Title: TuxCare ELS Artifactory Registration Script."
+echo  "Purpose: Register Artifactory Tool to TuxCare and provide URls"
 echo "         for Artifactory Configuration."
-echo  Created by: Jamie Charleston 
-echo  Version: 1.1
-echo  Last updated: 05/13/2024
-echo
-echo  Terms: By using this script to register your server, you agree that all
-echo         servers connecting to your Artifactory have been counted and that count
-echo         has been provided to your TuxCare Account Manager. If that number changes
-echo         as it pertains for your specific contract you agree to provide updates to
-echo         your account manager. By continueing forward with using this tool and
-echo         registering your Artifactory you agree to be bound by the TuxCare EULA
-echo         (https://tuxcare.com/legal/) or customized MSSA.
-echo
-echo  Disclaimer:
-echo  This script is provided "AS IS" and without warranty of any kind.
-echo  You, the user, assume any risks associated with the use of this script.
-echo  You are solely responsible for the use and misuse of this script.
-echo  You agree to indemnify and hold harmless the creator of this script
-echo  from any and all claims arising from your use or misuse of the script.
-echo ****************************************************************************
+echo  "Created by: Jamie Charleston" 
+echo  "Version: 1.1"
+echo  "Last updated: 05/13/2024"
+echo ""
+echo  "Terms: By using this script to register your server, you agree that all"
+echo  "       servers connecting to your Artifactory have been counted and that count"
+echo  "       has been provided to your TuxCare Account Manager. If that number changes"
+echo  "       as it pertains for your specific contract you agree to provide updates to"
+echo  "       your account manager. By continueing forward with using this tool and"
+echo  "       registering your Artifactory you agree to be bound by the TuxCare EULA"
+echo  "       (https://tuxcare.com/legal/) or customized MSSA."
+echo  ""
+echo  "Disclaimer:"
+echo  "This script is provided "AS IS" and without warranty of any kind."
+echo  "You, the user, assume any risks associated with the use of this script."
+echo  "You are solely responsible for the use and misuse of this script."
+echo  "You agree to indemnify and hold harmless the creator of this script"
+echo  "from any and all claims arising from your use or misuse of the script."
+echo "****************************************************************************"
 
 # Prompt the user to agree to the terms
 read -p "Do you agree to these terms? (y/n): " response
