@@ -49,7 +49,7 @@ generate_urls() {
     case "$prefix" in
         CELS)         # CentOS 6
             echo "Your have succesully registered your Artifactory Server for CentOS 6:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/x86_64/"
             echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/i686/"
@@ -59,7 +59,7 @@ generate_urls() {
             ;;
         CENTOS7)      # CentOS 7 Standard
             echo "Your have succesully registered your Artifactory Server for CentOS 7 Standard:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "https://repo.tuxcare.com/centos7-els/${token}/updates/x86_64/"
             echo "https://repo.tuxcare.com/centos7-els/${token}/updates/i686/"
@@ -67,7 +67,7 @@ generate_urls() {
             ;;
         CENTOS7COMP)  # CentOS 7 Complete
             echo "Your have succesully registered your Artifactory Server for CentOS 7 Complete:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "https://repo.tuxcare.com/centos7-els/${token}/updates/x86_64/"
             echo "https://repo.tuxcare.com/centos7-els/${token}/updates/i686/"
@@ -75,14 +75,14 @@ generate_urls() {
             ;;
         CELS_8)       # CentOS 8
             echo "Your have succesully registered your Artifactory Server for CentOS 8.5-els:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "https://repo.cloudlinux.com/centos8.5-els/${token}/updates/x86_64/"
             echo "https://repo.cloudlinux.com/centos8.5-els/${token}/updates/i686/"
             echo "https://repo.cloudlinux.com/centos8.5-els/${token}/updates/Sources/"
             echo ""
             echo "Your have succesully registered your Artifactory Server for CentOS 8.4-els:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "https://repo.cloudlinux.com/centos8.4-els/${token}/updates/x86_64/"
             echo "https://repo.cloudlinux.com/centos8.4-els/${token}/updates/i686/"
@@ -90,7 +90,7 @@ generate_urls() {
             ;;    
         CENTOS8STREAM)# CentOS 8 Stream
             echo "Your have succesully registered your Artifactory Server for CentOS 8 Stream:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "comming soon"
             echo "comming soon"
@@ -98,7 +98,7 @@ generate_urls() {
             ;;
         OELS)         # OEL 6
             echo "Your have succesully registered your Artifactory Server for OEL 6:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/x86_64/"
             echo "https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/i686/"
@@ -106,7 +106,7 @@ generate_urls() {
             ;;
         UELS16)         # Ubuntu 16.04
             echo "Your have succesully registered your Artifactory Server for Ubuntu 16.04:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/x86_64/"
             echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i686/"
@@ -114,7 +114,7 @@ generate_urls() {
             ;;
         UELS18)       # Ubuntu 18.04
             echo "Your have succesully registered your Artifactory Server for Ubuntu 18.04:"
-            echo "Here are the urls you may need depending one your systems archtecture."
+            echo "Here are the urls you may need depending one your systems architecture."
             echo ""
             echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/x86_64/"
             echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i686/"
