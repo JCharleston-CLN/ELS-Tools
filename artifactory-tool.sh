@@ -114,7 +114,7 @@ generate_urls() {
             echo "Your have succesully registered your Artifactory Server for Ubuntu 18.04:"
             echo "Here are the urls you may need depending one your systems architecture."
             echo ""
-            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/
+            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/"
             ;;
 
     esac
