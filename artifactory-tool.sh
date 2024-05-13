@@ -108,17 +108,13 @@ generate_urls() {
             echo "Your have succesully registered your Artifactory Server for Ubuntu 16.04:"
             echo "Here are the urls you may need depending one your systems architecture."
             echo ""
-            echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/x86_64/"
-            echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i686/"
-            echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i386/"
+            echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/"
             ;;
         UELS18)       # Ubuntu 18.04
             echo "Your have succesully registered your Artifactory Server for Ubuntu 18.04:"
             echo "Here are the urls you may need depending one your systems architecture."
             echo ""
-            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/x86_64/"
-            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i686/"
-            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i386/"
+            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/
             ;;
 
     esac
