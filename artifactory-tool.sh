@@ -34,7 +34,7 @@ if [ "$response" != "y" ]; then
 fi
 
 # Proceed with the script
-echo "You agreed to the terms. Continuing with the script."
+echo "Thank you for agreeing to the TOS. Please continue."
 
 
 # Define a function to generate URLs based on the token and product type
@@ -51,74 +51,74 @@ generate_urls() {
             echo "Your have succesully registered your Artifactory Server for CentOS 6:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. https://repo.cloudlinux.com/centos6-els/${token}/updates/x86_64/"
-            echo "2. https://repo.cloudlinux.com/centos6-els/${token}/updates/i686/"
-            echo "3. https://repo.cloudlinux.com/centos6-els/${token}/updates/i386/"
-            echo "4. https://repo.cloudlinux.com/centos6-els/${token}/updates/SRPMS/"
-            echo "5. https://repo.cloudlinux.com/centos6-els/${token}/updates/"            
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/x86_64/"
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/i686/"
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/i386/"
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/SRPMS/"
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/"            
             ;;
         CENTOS7)      # CentOS 7 Standard
             echo "Your have succesully registered your Artifactory Server for CentOS 7 Standard:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. https://repo.tuxcare.com/centos7-els/${token}/updates/x86_64/"
-            echo "2. https://repo.tuxcare.com/centos7-els/${token}/updates/i686/"
-            echo "3. https://repo.tuxcare.com/centos7-els/${token}/updates/i386/"
+            echo "https://repo.tuxcare.com/centos7-els/${token}/updates/x86_64/"
+            echo "https://repo.tuxcare.com/centos7-els/${token}/updates/i686/"
+            echo "https://repo.tuxcare.com/centos7-els/${token}/updates/i386/"
             ;;
         CENTOS7COMP)  # CentOS 7 Complete
             echo "Your have succesully registered your Artifactory Server for CentOS 7 Complete:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. https://repo.tuxcare.com/centos7-els/${token}/updates/x86_64/"
-            echo "2. https://repo.tuxcare.com/centos7-els/${token}/updates/i686/"
-            echo "3. https://repo.tuxcare.com/centos7-els/${Ttoken}/updates/i386/"
+            echo "https://repo.tuxcare.com/centos7-els/${token}/updates/x86_64/"
+            echo "https://repo.tuxcare.com/centos7-els/${token}/updates/i686/"
+            echo "https://repo.tuxcare.com/centos7-els/${Ttoken}/updates/i386/"
             ;;
         CELS_8)       # CentOS 8
             echo "Your have succesully registered your Artifactory Server for CentOS 8.5-els:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. https://repo.cloudlinux.com/centos8.5-els/${token}/updates/x86_64/"
-            echo "2. https://repo.cloudlinux.com/centos8.5-els/${token}/updates/i686/"
-            echo "3. https://repo.cloudlinux.com/centos8.5-els/${token}/updates/Sources/"
+            echo "https://repo.cloudlinux.com/centos8.5-els/${token}/updates/x86_64/"
+            echo "https://repo.cloudlinux.com/centos8.5-els/${token}/updates/i686/"
+            echo "https://repo.cloudlinux.com/centos8.5-els/${token}/updates/Sources/"
             echo ""
             echo "Your have succesully registered your Artifactory Server for CentOS 8.4-els:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. https://repo.cloudlinux.com/centos8.4-els/${token}/updates/x86_64/"
-            echo "2. https://repo.cloudlinux.com/centos8.4-els/${token}/updates/i686/"
-            echo "3. https://repo.cloudlinux.com/centos8.4-els/${token}/updates/Sources/"
+            echo "https://repo.cloudlinux.com/centos8.4-els/${token}/updates/x86_64/"
+            echo "https://repo.cloudlinux.com/centos8.4-els/${token}/updates/i686/"
+            echo "https://repo.cloudlinux.com/centos8.4-els/${token}/updates/Sources/"
             ;;    
         CENTOS8STREAM)# CentOS 8 Stream
             echo "Your have succesully registered your Artifactory Server for CentOS 8 Stream:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. comming soon"
-            echo "2. comming soon"
-            echo "3. comming soon"
+            echo "comming soon"
+            echo "comming soon"
+            echo "comming soon"
             ;;
         OELS)         # OEL 6
             echo "Your have succesully registered your Artifactory Server for OEL 6:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/x86_64/"
-            echo "2. https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/i686/"
-            echo "3. https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/SRPMS/"
+            echo "https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/x86_64/"
+            echo "https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/i686/"
+            echo "https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/SRPMS/"
             ;;
         UELS16)         # Ubuntu 16.04
             echo "Your have succesully registered your Artifactory Server for Ubuntu 16.04:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/x86_64/"
-            echo "2. https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i686/"
-            echo "3. https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i386/"
+            echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/x86_64/"
+            echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i686/"
+            echo "https://repo.cloudlinux.com/ubuntu16_04-els/${token}/updates/i386/"
             ;;
         UELS18)       # Ubuntu 18.04
             echo "Your have succesully registered your Artifactory Server for Ubuntu 18.04:"
             echo "Here are the urls you may need depending one your systems archtecture."
             echo ""
-            echo "1. https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/x86_64/"
-            echo "2. https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i686/"
-            echo "3. https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i386/"
+            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/x86_64/"
+            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i686/"
+            echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/i386/"
             ;;
 
     esac
