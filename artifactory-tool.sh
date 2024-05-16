@@ -121,6 +121,14 @@ generate_urls() {
             echo ""
             echo "https://repo.cloudlinux.com/ubuntu18_04-els/${token}/updates/"
             ;;
+         ESU) # AlmaLinux ESU / FIPS
+            echo "Your have succesully registered your Artifactory Server for AlmaLinux ESU/FIPS:"
+            echo "Here are the urls you may need depending one your systems architecture."
+            echo ""
+            echo https://repo.tuxcare.com/tuxcare/9.2/base/x86_64/
+            echo https://repo.tuxcare.com/tuxcare/9.2/${token}/esu/x86_64/
+            echo https://repo.tuxcare.com/tuxcare/9.2/${token}/fips/x86_64/
+            ;;        
 
     esac
     echo ""
@@ -138,13 +146,22 @@ read LICENSE
 # Extract the prefix by finding the first part of the license key before the dash
 PREFIX=$(echo "$LICENSE" | grep -oE '^[^-]*')
 
-# Use the provided license key to make a POST request and extract the token
-TOKEN=$(curl -s -X POST \
-               -H "Content-Type: application/json" \
-               -H "Accept: */*" \
-               -d "{\"key\": \"$LICENSE\", \"host_name\": \"$(hostname)\"}" \
-               https://cln.cloudlinux.com/cln/api/centos/token/register | grep -oP '"token":"\K[\w\d-]*')
-
+# Determine the appropriate curl command based on the prefix and retrieve the token
+if [ "$PREFIX" = "ESU" ]; then
+    # Use a different endpoint and headers if the prefix is ESU
+    TOKEN=$(curl -s -i -X POST \
+                -H "Content-Type: application/json" \
+                -H "accept: */*" \
+                -d "{\"key\": \"$LICENSE\", \"host_name\": \"$(hostname)\"}" \
+                https://cln.cloudlinux.com/cln/api/els/token/register | grep -oP '"token":"\K[\w\d-]*')
+else
+    # Use the standard endpoint and headers for other prefixes
+    TOKEN=$(curl -s -X POST \
+                -H "Content-Type: application/json" \
+                -H "Accept: */*" \
+                -d "{\"key\": \"$LICENSE\", \"host_name\": \"$(hostname)\"}" \
+                https://cln.cloudlinux.com/cln/api/centos/token/register | grep -oP '"token":"\K[\w\d-]*')
+                
 # Check if the token was successfully captured
 if [ -z "$TOKEN" ]; then
     echo "Failed to retrieve token. Please check your license key and try again."
