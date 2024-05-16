@@ -161,7 +161,7 @@ else
                 -H "Accept: */*" \
                 -d "{\"key\": \"$LICENSE\", \"host_name\": \"$(hostname)\"}" \
                 https://cln.cloudlinux.com/cln/api/centos/token/register | grep -oP '"token":"\K[\w\d-]*')
-                
+fi
 # Check if the token was successfully captured
 if [ -z "$TOKEN" ]; then
     echo "Failed to retrieve token. Please check your license key and try again."
