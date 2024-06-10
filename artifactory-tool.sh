@@ -96,9 +96,9 @@ generate_urls() {
             echo "Your have succesully registered your Artifactory Server for CentOS 8 Stream:"
             echo "Here are the urls you may need depending on your systems architecture."
             echo ""
-            echo "comming soon"
-            echo "comming soon"
-            echo "comming soon"
+            echo "https://repo.tuxcare.com/centos8stream-els/${token}/updates/i686/"
+            echo "https://repo.tuxcare.com/centos8stream-els/${token}/updates/Sources/"
+            echo "https://repo.tuxcare.com/centos8stream-els/${token}/updates/x86_64/"
             ;;
         OELS)         # OEL 6
             echo "Your have succesully registered your Artifactory Server for OEL 6:"
