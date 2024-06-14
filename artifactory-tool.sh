@@ -57,6 +57,16 @@ generate_urls() {
             echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/SRPMS/"
             echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/"            
             ;;
+        ELS_FOR_CENTOS6_PLUS_SLA)         # CentOS 6
+            echo "Your have succesully registered your Artifactory Server for CentOS 6:"
+            echo "Here are the urls you may need depending on your systems architecture."
+            echo ""
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/x86_64/"
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/i686/"
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/i386/"
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/SRPMS/"
+            echo "https://repo.cloudlinux.com/centos6-els/${token}/updates/"            
+            ;;    
         CENTOS7)      # CentOS 7 Standard
             echo "Your have succesully registered your Artifactory Server for CentOS 7 Standard:"
             echo "Here are the urls you may need depending on your systems architecture."
