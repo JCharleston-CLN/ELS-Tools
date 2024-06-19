@@ -141,7 +141,12 @@ generate_urls() {
             echo https://repo.tuxcare.com/tuxcare/9.2/base/x86_64/
             echo https://repo.tuxcare.com/tuxcare/9.2/${token}/esu/x86_64/
             echo https://repo.tuxcare.com/tuxcare/9.2/${token}/fips/x86_64/
+            #echo  These are for Essential Support
+            #echo https://repo.tuxcare.com/almalinux/9.2/${token}/AppStream/x86_64/os/
+            #echo https://repo.tuxcare.com/almalinux/9.2/${token}/BaseOS/x86_64/os/
+            #echo https://repo.tuxcare.com/almalinux/9.2/${token}/extras/x86_64/os/
             ;;        
+         
 
     esac
     echo ""
