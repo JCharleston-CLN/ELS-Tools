@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # URL of the encrypted executable
-URL="https://github.com/JCharleston-CLN/ELS-Tools/releases/tag/v1.0.0"
+URL="https://github.com/JCharleston-CLN/ELS-Tools/releases/download/v1.0.0/artifactory-tool.sh.x"
 
 # Download the encrypted executable
 wget $URL
