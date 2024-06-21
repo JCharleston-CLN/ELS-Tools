@@ -4,7 +4,7 @@
 URL="https://github.com/JCharleston-CLN/ELS-Tools/releases/download/v1.0.0/artifactory-tool.sh.x"
 
 # Download the encrypted executable
-wget $URL
+curl -O $URL
 
 # Set execute permission
 chmod +x artifactory-tool.sh.x
