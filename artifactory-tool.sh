@@ -119,6 +119,15 @@ generate_urls() {
             echo "https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/i686/"
             echo "https://repo.cloudlinux.com/oraclelinux6-els/${token}/updates/SRPMS/"
             ;;
+        OLINUX7)         # OEL 7
+            echo "Your have succesully registered your Artifactory Server for OEL 6:"
+            echo "Here are the urls you may need depending on your systems architecture."
+            echo ""
+            echo "https://repo.cloudlinux.com/ORACLELINUX7ELS/${token}/updates/"
+            echo "https://repo.cloudlinux.com/ORACLELINUX7ELS/${token}/updates/x86_64/"
+            echo "https://repo.cloudlinux.com/ORACLELINUX7ELS/${token}/updates/i686/"
+            echo "https://repo.cloudlinux.com/ORACLELINUX7ELS/${token}/updates/SRPMS/"
+            ;;    
         UELS16)         # Ubuntu 16.04
             echo "Your have succesully registered your Artifactory Server for Ubuntu 16.04:"
             echo "Here is the url you need for your Artifactory configuration."
