@@ -126,7 +126,6 @@ generate_urls() {
             echo "https://repo.tuxcare.com/oraclelinux7-els/${token}/updates/"
             echo "https://repo.tuxcare.com/oraclelinux7-els/${token}/updates/x86_64/"
             echo "https://repo.tuxcare.com/oraclelinux7-els/${token}/updates/i686/"
-            echo "https://repo.tuxcare.com/oraclelinux7-els/${token}/updates/SRPMS/"
             echo "https://repo.tuxcare.com/oraclelinux7-els/${token}/updates/Sources"
             ;;    
         UELS16)         # Ubuntu 16.04
