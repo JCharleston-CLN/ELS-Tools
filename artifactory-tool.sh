@@ -177,7 +177,7 @@ HOSTNAME=$(hostname)
 
 # Extract the prefix by finding the first part of the license key before the dash
 #PREFIX=$(echo "$LICENSE" | grep -oE '^[^-]*')
-PREFIX=$(echo "$LICENSE" | grep -oE '^[A-Z0-9]+')
+PREFIX=$(echo "$LICENSE" | grep -oE '^[A-Z_]+')
 
 # Determine the appropriate curl command based on the prefix and retrieve the token
 if [[ "$PREFIX" == "ESU" ]]; then
