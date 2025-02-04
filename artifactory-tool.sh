@@ -170,25 +170,39 @@ generate_urls() {
 echo "Please enter your license key:"
 read LICENSE
 
+# Define the server URLs
+CLN_SERVER_ESU="https://cln.cloudlinux.com/cln/api/els/token/register"
+CLN_SERVER_CENTOS="https://cln.cloudlinux.com/cln/api/centos/token/register"
+HOSTNAME=$(hostname)
+
 # Extract the prefix by finding the first part of the license key before the dash
 PREFIX=$(echo "$LICENSE" | grep -oE '^[^-]*')
-
 # Determine the appropriate curl command based on the prefix and retrieve the token
-if [ "$PREFIX" = "ESU" ]; then
-    # Use a different endpoint and headers if the prefix is ESU
+if [[ "$PREFIX" == "ESU" ]]; then
+    # ESU prefix uses the ELS API
     TOKEN=$(curl -s -i -X POST \
                 -H "Content-Type: application/json" \
                 -H "accept: */*" \
-                -d "{\"key\": \"$LICENSE\", \"host_name\": \"$(hostname)\"}" \
-                https://cln.cloudlinux.com/cln/api/els/token/register | grep -oP '"token":"\K[\w\d-]*')
+                -d "{\"key\": \"$LICENSE\", \"host_name\": \"$HOSTNAME\"}" \
+                "$CLN_SERVER_ESU" | grep -oP '"token":"\K[\w\d-]*')
+
+elif [[ "$PREFIX" == "OELS" || "$PREFIX" == "OLINUX7" ]]; then
+    # OELS and OLINUX7 prefixes use the CLN API
+    TOKEN=$(curl -i -X POST \
+                -H "Content-Type: application/json" \
+                -H "accept: */*" \
+                -d "{\"key\": \"$LICENSE\", \"host_name\": \"$HOSTNAME\"}" \
+                "$CLN_SERVER")
+
 else
-    # Use the standard endpoint and headers for other prefixes
+    # Default case (for all other prefixes)
     TOKEN=$(curl -s -X POST \
                 -H "Content-Type: application/json" \
                 -H "Accept: */*" \
-                -d "{\"key\": \"$LICENSE\", \"host_name\": \"$(hostname)\"}" \
-                https://cln.cloudlinux.com/cln/api/centos/token/register | grep -oP '"token":"\K[\w\d-]*')
+                -d "{\"key\": \"$LICENSE\", \"host_name\": \"$HOSTNAME\"}" \
+                "$CLN_SERVER_CENTOS" | grep -oP '"token":"\K[\w\d-]*')
 fi
+
 # Check if the token was successfully captured
 if [ -z "$TOKEN" ]; then
     echo "Failed to retrieve token. Please check your license key and try again."
