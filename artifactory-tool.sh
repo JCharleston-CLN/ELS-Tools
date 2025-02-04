@@ -173,6 +173,7 @@ read LICENSE
 # Define the server URLs
 CLN_SERVER_ESU="https://cln.cloudlinux.com/cln/api/els/token/register"
 CLN_SERVER_CENTOS="https://cln.cloudlinux.com/cln/api/centos/token/register"
+CLN_SERVER_OEL="https://cln.cloudlinux.com/cln/api/els/server/register"
 HOSTNAME=$(hostname)
 
 # Extract the prefix by finding the first part of the license key before the dash
@@ -194,7 +195,7 @@ elif [[ "$PREFIX" == "OELS" || "$PREFIX" == "OLINUX7" ]]; then
                 -H "Content-Type: application/json" \
                 -H "accept: */*" \
                 -d "{\"key\": \"$LICENSE\", \"host_name\": \"$HOSTNAME\"}" \
-                "$CLN_SERVER")
+                "$CLN_SERVER_OEL")
 
 else
     # Default case (for all other prefixes)
