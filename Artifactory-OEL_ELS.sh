@@ -3,22 +3,22 @@
 clear
 echo "****************************************************************************"
 echo  "Title: TuxCare ELS Artifactory Registration Script."
-echo  "Purpose: Register Artifactory Tool to TuxCare and provide URls"
+echo  "Purpose: Register Artifactory Tool to TuxCare and provide URLs"
 echo "         for Artifactory Configuration."
 echo  "Created by: Jamie Charleston" 
-echo  "Version: 1.5"
-echo  "Last updated: 05/16/2024"
+echo  "Version: 1.6"
+echo  "Last updated: 02/04/2025"
 echo ""
 echo  "Terms: By using this script to register your server, you agree that all"
 echo  "       servers connecting to your Artifactory have been counted and that count"
 echo  "       has been provided to your TuxCare Account Manager. If that number changes"
-echo  "       as it pertains for your specific contract you agree to provide updates to"
-echo  "       your account manager. By continueing forward with using this tool and"
-echo  "       registering your Artifactory you agree to be bound by the TuxCare EULA"
+echo  "       as it pertains to your specific contract, you agree to provide updates to"
+echo  "       your account manager. By continuing forward with using this tool and"
+echo  "       registering your Artifactory, you agree to be bound by the TuxCare EULA"
 echo  "       (https://tuxcare.com/legal/) or customized MSSA."
 echo  ""
 echo  "Disclaimer:"
-echo  "This script is provided "AS IS" and without warranty of any kind."
+echo  "This script is provided \"AS IS\" and without warranty of any kind."
 echo  "You, the user, assume any risks associated with the use of this script."
 echo  "You are solely responsible for the use and misuse of this script."
 echo  "You agree to indemnify and hold harmless the creator of this script"
@@ -29,14 +29,25 @@ echo "**************************************************************************
 read -p "Do you agree to these terms? (y/n): " response
 
 # Check if the user agreed to the terms
-if [ "$response" != "y" ]; then
+if [[ "$response" != "y" ]]; then
   echo "You did not agree to the terms. Exiting script."
   exit 1
 fi
 
-# Proceed with the script
 echo "Thank you for agreeing to the TOS. Please continue."
 
+# Ask the user to select their operating system version
+echo ""
+echo "Please select your Oracle Enterprise Linux version:"
+echo "1) OEL 6"
+echo "2) OEL 7"
+read -p "Enter the number corresponding to your version (1 or 2): " OEL_VERSION
+
+# Validate the user's input
+if [[ "$OEL_VERSION" != "1" && "$OEL_VERSION" != "2" ]]; then
+    echo "Invalid selection. Please restart the script and choose either 1 (OEL 6) or 2 (OEL 7)."
+    exit 1
+fi
 
 # Define the server URL and retrieve the hostname
 CLN_SERVER="https://cln.cloudlinux.com/cln/api/els/server/register"
@@ -65,20 +76,29 @@ fi
 TOKEN=$(echo "$CLN_REGISTER" | grep -oP '"token":"\K[\w\d-]*')
 
 # Validate if the token was found
-if [[ -z $TOKEN ]]; then
+if [[ -z "$TOKEN" ]]; then
     echo "Something went wrong. Token not defined."
     exit 1
 fi
 
-# Print the token
-echo "Your registration token is: $TOKEN"
+# Print the appropriate repository URLs based on user selection
 echo ""
-
-# Print the repository URLs with the token
-echo "You have successfully registered your Artifactory Server for OEL 7."
-echo "Here are the URLs you may need depending on your system's architecture:"
-echo ""
-echo "https://repo.tuxcare.com/oraclelinux7-els/${TOKEN}/updates/"
-echo "https://repo.tuxcare.com/oraclelinux7-els/${TOKEN}/updates/x86_64/"
-echo "https://repo.tuxcare.com/oraclelinux7-els/${TOKEN}/updates/i686/"
-echo "https://repo.tuxcare.com/oraclelinux7-els/${TOKEN}/updates/Sources"
+if [[ "$OEL_VERSION" == "1" ]]; then
+    # OEL 6
+    echo "You have successfully registered your Artifactory Server for OEL 6."
+    echo "Here are the URLs you may need depending on your system's architecture:"
+    echo ""
+    echo "https://repo.cloudlinux.com/oraclelinux6-els/${TOKEN}/updates/"
+    echo "https://repo.cloudlinux.com/oraclelinux6-els/${TOKEN}/updates/x86_64/"
+    echo "https://repo.cloudlinux.com/oraclelinux6-els/${TOKEN}/updates/i686/"
+    echo "https://repo.cloudlinux.com/oraclelinux6-els/${TOKEN}/updates/SRPMS/"
+else
+    # OEL 7
+    echo "You have successfully registered your Artifactory Server for OEL 7."
+    echo "Here are the URLs you may need depending on your system's architecture:"
+    echo ""
+    echo "https://repo.tuxcare.com/oraclelinux7-els/${TOKEN}/updates/"
+    echo "https://repo.tuxcare.com/oraclelinux7-els/${TOKEN}/updates/x86_64/"
+    echo "https://repo.tuxcare.com/oraclelinux7-els/${TOKEN}/updates/i686/"
+    echo "https://repo.tuxcare.com/oraclelinux7-els/${TOKEN}/updates/Sources"
+fi
