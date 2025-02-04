@@ -176,7 +176,9 @@ CLN_SERVER_CENTOS="https://cln.cloudlinux.com/cln/api/centos/token/register"
 HOSTNAME=$(hostname)
 
 # Extract the prefix by finding the first part of the license key before the dash
-PREFIX=$(echo "$LICENSE" | grep -oE '^[^-]*')
+#PREFIX=$(echo "$LICENSE" | grep -oE '^[^-]*')
+PREFIX=$(echo "$LICENSE" | grep -oE '^[A-Z0-9]+')
+
 # Determine the appropriate curl command based on the prefix and retrieve the token
 if [[ "$PREFIX" == "ESU" ]]; then
     # ESU prefix uses the ELS API
