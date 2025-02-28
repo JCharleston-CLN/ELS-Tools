@@ -2,7 +2,7 @@
 
 clear
 echo "****************************************************************************"
-echo "Title: TuxCare .Net6 Activation Script v1.0"
+echo "Title: TuxCare .Net6 Activation Script for Linux v1.0"
 echo "Purpose: Register Artifactory Tool to TuxCare and provide URLs"
 echo "Created by: Jamie Charleston | Last updated: 02/28/2025"
 echo ""
