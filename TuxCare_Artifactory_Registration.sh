@@ -166,7 +166,7 @@ case "$OS_SELECTION" in
     10)  # Ubuntu 20.04
         echo "Successfully registered your Artifactory Server for Ubuntu."
         echo "Here is the URL you need:"
-        echo "https://repo.cloudlinux.com/ubuntu20_04-els/${TOKEN}/updates/"
+        echo "https://repo.tuxcare.com/ubuntu20_04-els/${TOKEN}/updates/"
         ;;
         
     11)  # AlmaLinux ESU/FIPS
