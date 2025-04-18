@@ -56,7 +56,8 @@ echo "6) CentOS 8.5"
 echo "7) CentOS 8 Stream"
 echo "8) Ubuntu 16.04"
 echo "9) Ubuntu 18.04"
-echo "10) AlmaLinux ESU / FIPS"
+echo "10) Ubuntu 20.04"
+echo "11) AlmaLinux ESU / FIPS"
 read -p "Enter the number corresponding to your OS: " OS_SELECTION
 
 # Define API endpoints
@@ -162,7 +163,13 @@ case "$OS_SELECTION" in
         echo "Here is the URL you need:"
         echo "https://repo.cloudlinux.com/ubuntu18_04-els/${TOKEN}/updates/"
         ;;
-    10)  # AlmaLinux ESU/FIPS
+    10)  # Ubuntu 20.04
+        echo "Successfully registered your Artifactory Server for Ubuntu."
+        echo "Here is the URL you need:"
+        echo "https://repo.cloudlinux.com/ubuntu20_04-els/${TOKEN}/updates/"
+        ;;
+        
+    11)  # AlmaLinux ESU/FIPS
         echo "Your have succesully registered your Artifactory Server for AlmaLinux ESU/FIPS:"
         echo "Here are the urls you may need depending on your systems architecture."
         echo ""
@@ -171,7 +178,7 @@ case "$OS_SELECTION" in
         echo ""
         echo https://repo.tuxcare.com/tuxcare/9.2/base/x86_64/
         echo https://repo.tuxcare.com/tuxcare/9.2/${TOKEN}/esu/x86_64/
-        echo https://repo.tuxcare.com/tuxcare/9.2/${TOKEN}/fips/x86_64/
+        #echo https://repo.tuxcare.com/tuxcare/9.2/${TOKEN}/fips/x86_64/
 esac
 
 echo ""
