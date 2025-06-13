@@ -6,8 +6,8 @@ echo  "Title: TuxCare ELS Artifactory Registration Script."
 echo  "Purpose: Register Artifactory Tool to TuxCare and provide URLs"
 echo "         for Artifactory Configuration."
 echo  "Created by: Jamie Charleston" 
-echo  "Version: 2.0"
-echo  "Last updated: 02/04/2025"
+echo  "Version: 2.2"
+echo  "Last updated: 06/13/2025"
 echo ""
 echo  "Terms: By using this script to register your server, you agree that all"
 echo  "       servers connecting to your Artifactory have been counted and that count"
@@ -58,6 +58,7 @@ echo "8) Ubuntu 16.04"
 echo "9) Ubuntu 18.04"
 echo "10) Ubuntu 20.04"
 echo "11) AlmaLinux ESU / FIPS"
+echo "12) PHP ELS for Linux"
 read -p "Enter the number corresponding to your OS: " OS_SELECTION
 
 # Define API endpoints
@@ -68,7 +69,7 @@ HOSTNAME=$(hostname)
 
 # Determine the correct API endpoint based on user selection
 case "$OS_SELECTION" in
-    1|2) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7
+    1|2|12) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7
     3|4|5|6|7|8|9|10) CLN_SERVER="$CLN_SERVER_CENTOS" ;; # CentOS 6, 7, 8, 8 Stream, Ubuntu 16.04, Ubuntu 18.04
     11) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS
     *) 
@@ -176,10 +177,23 @@ case "$OS_SELECTION" in
         echo "Please understand you require both the Base and ESU branches are minimum."
         echo "You only need to add the FIPs branch if you are enabling FIPS mode. "
         echo ""
-        echo https://repo.tuxcare.com/tuxcare/9.2/base/x86_64/
-        echo https://repo.tuxcare.com/tuxcare/9.2/${TOKEN}/esu/x86_64/
+        echo "https://repo.tuxcare.com/tuxcare/9.2/base/x86_64/"
+        echo "https://repo.tuxcare.com/tuxcare/9.2/${TOKEN}/esu/x86_64/"
         #echo https://repo.tuxcare.com/tuxcare/9.2/${TOKEN}/fips/x86_64/
+        ;;
+
+    12)  # PHP ELS
+        echo "Your have succesully registered your Artifactory Server for PHP ELS:"
+        echo "Here are the urls you may need depending on your systems architecture."
+        echo ""
+        echo ""
+        echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/" 
+        echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/el9/updates/x86_64/"
+        echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/ubuntu22.04/updates/"   
 esac
+
+echo ""
+echo "Please copy these URLs and save them in a safe place."
 
 echo ""
 echo "Please copy these URLs and save them in a safe place."
