@@ -195,5 +195,4 @@ esac
 echo ""
 echo "Please copy these URLs and save them in a safe place."
 
-echo ""
-echo "Please copy these URLs and save them in a safe place."
+
