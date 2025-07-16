@@ -180,6 +180,8 @@ case "$OS_SELECTION" in
         echo "https://repo.tuxcare.com/tuxcare/9.2/base/x86_64/"
         echo "https://repo.tuxcare.com/tuxcare/9.2/${TOKEN}/esu/x86_64/"
         #echo https://repo.tuxcare.com/tuxcare/9.2/${TOKEN}/fips/x86_64/
+        echo "https://repo.tuxcare.com/tuxcare/9.6/base/x86_64/"
+        echo "https://repo.tuxcare.com/tuxcare/9.6/${TOKEN}/esu/x86_64/"
         ;;
 
     12)  # PHP ELS
