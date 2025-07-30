@@ -73,7 +73,7 @@ HOSTNAME=$(hostname)
 case "$OS_SELECTION" in
     1|2|12) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7
     3|4|5|6|7|8|9|10) CLN_SERVER="$CLN_SERVER_CENTOS" ;; # CentOS 6, 7, 8, 8 Stream, Ubuntu 16.04, Ubuntu 18.04
-    11) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS
+    11|13|14) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS
     *) 
         echo "Invalid selection. Please restart the script and choose a valid option."
         exit 1
