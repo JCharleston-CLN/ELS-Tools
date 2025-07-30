@@ -194,14 +194,14 @@ case "$OS_SELECTION" in
         echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/" 
         echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/el9/updates/x86_64/"
         echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/ubuntu22.04/updates/"   
-
+        ;;
     13)  # RockyLinux 9.6 Essential Support
         echo "Your have succesully registered your Artifactory Server for RockyLinux 9.6 Essential Support:"
         echo "Here are the urls you may need depending on your systems architecture."
         echo ""
         echo ""
         echo "https://repo.tuxcare.com/rockylinux/9.6/${TOKEN}/" 
-
+        ;;
 
     14)  # RockyLinux 9.6 ESU
         echo "Your have succesully registered your Artifactory Server for RockyLinux 9.6 ESU:"
