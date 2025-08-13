@@ -61,6 +61,7 @@ echo "11) AlmaLinux ESU / FIPS"
 echo "12) PHP ELS for Linux"
 echo "13) RockyLinux 9.6 Essential Support"
 echo "14) RockyLinux 9.6 ESU"
+echo "15) RHEL 7 ELS"
 read -p "Enter the number corresponding to your OS: " OS_SELECTION
 
 # Define API endpoints
@@ -73,7 +74,7 @@ HOSTNAME=$(hostname)
 case "$OS_SELECTION" in
     1|2|12) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7
     3|4|5|6|7|8|9|10) CLN_SERVER="$CLN_SERVER_CENTOS" ;; # CentOS 6, 7, 8, 8 Stream, Ubuntu 16.04, Ubuntu 18.04
-    11|13|14) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS
+    11|13|14|15) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS, Rocky, RHEL 7
     *) 
         echo "Invalid selection. Please restart the script and choose a valid option."
         exit 1
@@ -209,7 +210,13 @@ case "$OS_SELECTION" in
         echo ""
         echo ""
         echo "https://repo.tuxcare.com/tuxcare/9.6/${TOKEN}/esu/" 
-     
+
+     15)  # RHEL 7 ELS
+        echo "Your have succesully registered your Artifactory Server for RHEL 7:"
+        echo "Here are the urls you may need depending on your systems architecture."
+        echo ""
+        echo ""
+        echo "https://repo.tuxcare.com/rhel7-els/${TOKEN}/" 
 esac
 
 echo ""
