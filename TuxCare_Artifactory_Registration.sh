@@ -210,6 +210,7 @@ case "$OS_SELECTION" in
         echo ""
         echo ""
         echo "https://repo.tuxcare.com/tuxcare/9.6/${TOKEN}/esu/" 
+        ;;
 
      15)  # RHEL 7 ELS
         echo "Your have succesully registered your Artifactory Server for RHEL 7:"
