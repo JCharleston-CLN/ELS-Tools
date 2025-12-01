@@ -58,10 +58,11 @@ echo "8) Ubuntu 16.04"
 echo "9) Ubuntu 18.04"
 echo "10) Ubuntu 20.04"
 echo "11) AlmaLinux ESU / FIPS"
-echo "12) PHP ELS for Linux"
-echo "13) RockyLinux 9.6 Essential Support"
-echo "14) RockyLinux 9.6 ESU"
-echo "15) RHEL 7 ELS"
+echo "12) AlmaLinux Essentials"
+echo "13) PHP ELS for Linux"
+echo "14) RockyLinux 9.6 Essential Support"
+echo "15) RockyLinux 9.6 ESU"
+echo "16) RHEL 7 ELS"
 read -p "Enter the number corresponding to your OS: " OS_SELECTION
 
 # Define API endpoints
@@ -72,9 +73,9 @@ HOSTNAME=$(hostname)
 
 # Determine the correct API endpoint based on user selection
 case "$OS_SELECTION" in
-    1|2|12) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7
+    1|2|13) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7, PHP
     3|4|5|6|7|8|9|10) CLN_SERVER="$CLN_SERVER_CENTOS" ;; # CentOS 6, 7, 8, 8 Stream, Ubuntu 16.04, Ubuntu 18.04
-    11|13|14|15) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS, Rocky, RHEL 7
+    11|12|14|15|16) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS, Rocky, RHEL 7
     *) 
         echo "Invalid selection. Please restart the script and choose a valid option."
         exit 1
@@ -187,7 +188,27 @@ case "$OS_SELECTION" in
         echo "https://repo.tuxcare.com/tuxcare/9.6/${TOKEN}/esu/x86_64/"
         ;;
 
-    12)  # PHP ELS
+   12)  # AlmaLinux Essentials
+       echo "Your have succesully registered your Artifactory Server for AlmaLinux Essentials:"
+       echo "Here are the urls you may need depending on your systems architecture."
+       echo "You can replace the version number with any version of 9,9 or 10"
+       echo "Please understand you require both the Base and ESU branches are minimum."
+       echo "You only need to add the FIPs branch if you are enabling FIPS mode. "
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/AppStream/x86_64/os"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/BaseOS/x86_64/os"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/CRB/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/extras/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/HighAvailability/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/NFV/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/plus/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/ResilientStorage/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/RT/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/SAPHANA/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/SAP/x86_64/os/"
+       echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/extras/x86_64/os/"
+       ;;    
+
+    13)  # PHP ELS
         echo "Your have succesully registered your Artifactory Server for PHP ELS:"
         echo "Here are the urls you may need depending on your systems architecture."
         echo ""
@@ -196,7 +217,7 @@ case "$OS_SELECTION" in
         echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/el9/updates/x86_64/"
         echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/ubuntu22.04/updates/"   
         ;;
-    13)  # RockyLinux 9.6 Essential Support
+    14)  # RockyLinux 9.6 Essential Support
         echo "Your have succesully registered your Artifactory Server for RockyLinux 9.6 Essential Support:"
         echo "Here are the urls you may need depending on your systems architecture."
         echo ""
@@ -204,7 +225,7 @@ case "$OS_SELECTION" in
         echo "https://repo.tuxcare.com/rockylinux/9.6/${TOKEN}/" 
         ;;
 
-    14)  # RockyLinux 9.6 ESU
+    15)  # RockyLinux 9.6 ESU
         echo "Your have succesully registered your Artifactory Server for RockyLinux 9.6 ESU:"
         echo "Here are the urls you may need depending on your systems architecture."
         echo ""
@@ -212,7 +233,7 @@ case "$OS_SELECTION" in
         echo "https://repo.tuxcare.com/tuxcare/9.6/${TOKEN}/esu/" 
         ;;
 
-     15)  # RHEL 7 ELS
+     16)  # RHEL 7 ELS
         echo "Your have succesully registered your Artifactory Server for RHEL 7:"
         echo "Here are the urls you may need depending on your systems architecture."
         echo ""
