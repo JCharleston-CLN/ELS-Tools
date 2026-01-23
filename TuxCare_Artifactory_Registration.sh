@@ -192,8 +192,6 @@ case "$OS_SELECTION" in
        echo "Your have succesully registered your Artifactory Server for AlmaLinux Essentials:"
        echo "Here are the urls you may need depending on your systems architecture."
        echo "You can replace the version number with any version of 8, 9 or 10"
-       echo "Please understand you require both the Base and ESU branches are minimum."
-       echo "You only need to add the FIPs branch if you are enabling FIPS mode. "
        echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/AppStream/x86_64/os"
        echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/BaseOS/x86_64/os"
        echo "https://repo.tuxcare.com/almalinux/9.7/${TOKEN}/CRB/x86_64/os/"
