@@ -210,10 +210,13 @@ case "$OS_SELECTION" in
         echo "Your have succesully registered your Artifactory Server for PHP ELS:"
         echo "Here are the urls you may need depending on your systems architecture."
         echo ""
-        echo ""
+        echo "Linux"
         echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/" 
         echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/el9/updates/x86_64/"
-        echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/ubuntu22.04/updates/"   
+        echo "https://repo.els.tuxcare.com/php-els/${TOKEN}/ubuntu22.04/updates/"  
+        echo ""
+        echo "Windows"
+        echo "https://${TOKEN}@windows.tuxcare.com/php/"
         ;;
     14)  # RockyLinux 9.6 Essential Support
         echo "Your have succesully registered your Artifactory Server for RockyLinux 9.6 Essential Support:"
@@ -237,6 +240,7 @@ case "$OS_SELECTION" in
         echo ""
         echo ""
         echo "https://repo.tuxcare.com/rhel7-els/${TOKEN}/" 
+   
 esac
 
 echo ""
