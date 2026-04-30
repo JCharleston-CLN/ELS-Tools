@@ -255,7 +255,7 @@ case "$OS_SELECTION" in
      18)  # Debian 10
         echo "Successfully registered your Artifactory Server for Debian 10."
         echo "Here is the URL you need:"
-        echo "https://repo.tuxcare.com/debian10-els/${TOKEN}/updates/"
+        echo "https://repo.tuxcare.com/debian10-els/${TOKEN}/stable/"
         ;;   
          
    
