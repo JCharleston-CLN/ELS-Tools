@@ -90,7 +90,7 @@ CLN_REGISTER=$(curl -s -X POST \
     -H "accept: */*" \
     -d "{\"key\": \"$LICENSE\", \"host_name\": \"$HOSTNAME\"}" "$CLN_SERVER")
 
-TOKEN=$(echo "$CLN_REGISTER" | grep -oP '"token":"\K[\w\d-]*')
+TOKEN=$(echo "$CLN_REGISTER" | grep -oP '"token"\s*:\s*"\K[^"]+')
 
 # Validate if the token was found
 if [[ -z "$TOKEN" ]]; then
