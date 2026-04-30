@@ -75,9 +75,9 @@ HOSTNAME=$(hostname)
 
 # Determine the correct API endpoint based on user selection
 case "$OS_SELECTION" in
-    1|2|13) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7, PHP
+    1|2|13|18) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7, PHP
     3|4|5|6|7|8|9|10) CLN_SERVER="$CLN_SERVER_CENTOS" ;; # CentOS 6, 7, 8, 8 Stream, Ubuntu 16.04, Ubuntu 18.04
-    11|12|14|15|16|17|18) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS, Rocky, RHEL 7, RHEL 8
+    11|12|14|15|16|17) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS, Rocky, RHEL 7, RHEL 8
     *) 
         echo "Invalid selection. Please restart the script and choose a valid option."
         exit 1
@@ -253,7 +253,7 @@ case "$OS_SELECTION" in
         ;;
 
      18)  # Debian 10
-        echo "Successfully registered your Artifactory Server for Ubuntu."
+        echo "Successfully registered your Artifactory Server for Debian 10."
         echo "Here is the URL you need:"
         echo "https://repo.tuxcare.com/debian10-els/${TOKEN}/updates/"
         ;;   
