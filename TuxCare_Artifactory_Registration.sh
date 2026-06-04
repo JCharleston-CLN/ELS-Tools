@@ -65,6 +65,7 @@ echo "15) RockyLinux 9.6 ESU"
 echo "16) RHEL 7 ELS"
 echo "17) RHEL 8 ELS"
 echo "18) Debian 10"
+echo "19) MySQL"
 read -p "Enter the number corresponding to your OS: " OS_SELECTION
 
 # Define API endpoints
@@ -75,7 +76,7 @@ HOSTNAME=$(hostname)
 
 # Determine the correct API endpoint based on user selection
 case "$OS_SELECTION" in
-    1|2|13|18) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7, PHP
+    1|2|13|18|19) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7, PHP
     3|4|5|6|7|8|9|10) CLN_SERVER="$CLN_SERVER_CENTOS" ;; # CentOS 6, 7, 8, 8 Stream, Ubuntu 16.04, Ubuntu 18.04
     11|12|14|15|16|17) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS, Rocky, RHEL 7, RHEL 8
     *) 
@@ -256,6 +257,22 @@ case "$OS_SELECTION" in
         echo "Successfully registered your Artifactory Server for Debian 10."
         echo "Here is the URL you need:"
         echo "https://repo.tuxcare.com/debian10-els/${TOKEN}/stable/"
+        ;;   
+
+         19)  # MySQL
+        echo "Successfully registered your Artifactory Server for MySQL."
+        echo "Here is the URL you need:"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/6/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/7/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/7/7Client/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/7/7Workstation/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/7/7Server/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/8/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/8/8Client/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/8/8Workstation/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/8/8Server/"
+        echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/9/"
         ;;   
          
    
