@@ -280,7 +280,7 @@ case "$OS_SELECTION" in
         echo "Here is the URL you need:"
         echo "https://repo.tuxcare.com/amazonlinux2-els/${TOKEN}/"
         echo "https://repo.tuxcare.com/amazonlinux2-els/${TOKEN}/stable/i686/"
-        echo "https://repo.tuxcare.com/amazonlinux2-els/${TOKEN}/stable/i686/"    
+        echo "https://repo.tuxcare.com/amazonlinux2-els/${TOKEN}/stable/x86_64/"    
    
 esac
 
