@@ -66,6 +66,7 @@ echo "16) RHEL 7 ELS"
 echo "17) RHEL 8 ELS"
 echo "18) Debian 10"
 echo "19) MySQL"
+echo "20) Amazon Linux 2"
 read -p "Enter the number corresponding to your OS: " OS_SELECTION
 
 # Define API endpoints
@@ -78,7 +79,7 @@ HOSTNAME=$(hostname)
 case "$OS_SELECTION" in
     1|2|13|18|19) CLN_SERVER="$CLN_SERVER_OEL" ;; # OEL 6 & 7, PHP
     3|4|5|6|7|8|9|10) CLN_SERVER="$CLN_SERVER_CENTOS" ;; # CentOS 6, 7, 8, 8 Stream, Ubuntu 16.04, Ubuntu 18.04
-    11|12|14|15|16|17) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS, Rocky, RHEL 7, RHEL 8
+    11|12|14|15|16|17|20) CLN_SERVER="$CLN_SERVER_ESU" ;; # AlmaLinux ESU/FIPS, Rocky, RHEL 7, RHEL 8
     *) 
         echo "Invalid selection. Please restart the script and choose a valid option."
         exit 1
@@ -274,7 +275,12 @@ case "$OS_SELECTION" in
         echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/8/8Server/"
         echo "https://repo.tuxcare.com/mysql-els/${TOKEN}/rpm/el/9/"
         ;;   
-         
+      20)  # Amazon Linux 2
+        echo "Successfully registered your Artifactory Server for Amazon Linux 2."
+        echo "Here is the URL you need:"
+        echo "https://repo.tuxcare.com/amazonlinux2-els/${TOKEN}/"
+        echo "https://repo.tuxcare.com/amazonlinux2-els/${TOKEN}/stable/i686/"
+        echo "https://repo.tuxcare.com/amazonlinux2-els/${TOKEN}/stable/i686/"    
    
 esac
 
