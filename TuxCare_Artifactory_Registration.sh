@@ -86,17 +86,33 @@ case "$OS_SELECTION" in
     ;;
 esac
 
-# Get the registration token
-CLN_REGISTER=$(curl -s -X POST \
+# Register the server and capture the API response.
+# -sS keeps normal output quiet while still displaying curl errors.
+CLN_REGISTER=$(curl -sS -X POST \
     -H "Content-Type: application/json" \
-    -H "accept: */*" \
-    -d "{\"key\": \"$LICENSE\", \"host_name\": \"$HOSTNAME\"}" "$CLN_SERVER")
+    -H "Accept: */*" \
+    -d "{\"key\": \"$LICENSE\", \"host_name\": \"$HOSTNAME\"}" \
+    "$CLN_SERVER")
+CURL_STATUS=$?
 
-TOKEN=$(echo "$CLN_REGISTER" | grep -oP '"token"\s*:\s*"\K[^"]+')
+if [[ $CURL_STATUS -ne 0 ]]; then
+    echo "Registration request failed. curl exit code: $CURL_STATUS"
+    exit 1
+fi
 
-# Validate if the token was found
+# Extract the token using Bash itself. This avoids grep -P, which is not
+# available in every grep implementation (for example, BusyBox or BSD grep).
+TOKEN_REGEX='"token"[[:space:]]*:[[:space:]]*"([^"]+)"'
+if [[ $CLN_REGISTER =~ $TOKEN_REGEX ]]; then
+    TOKEN="${BASH_REMATCH[1]}"
+else
+    TOKEN=""
+fi
+
+# Validate that the API response contained a token.
 if [[ -z "$TOKEN" ]]; then
-    echo "Something went wrong. Token not defined."
+    echo "Registration failed: the API response did not contain a token."
+    echo "API response: $CLN_REGISTER"
     exit 1
 fi
 
@@ -286,5 +302,4 @@ esac
 
 echo ""
 echo "Please copy these URLs and save them in a safe place."
-
 
